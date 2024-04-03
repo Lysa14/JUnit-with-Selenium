@@ -19,13 +19,13 @@ jobs:
       with:
           distribution: 'oracle' 
           java-version: '21'
+    
 
-    - name: Build with Maven    
-      run: mvn -B package --file pom.xml    
+    - name: Build with Maven
+      run: mvn -B clean package --file pom.xml
 
-
-    - name: Run Junit and Selenium tests
-      run: mvn test -Dtest=TestRunner
+    - name: Run Junit tests
+      run: mvn test 
 
    selenium:
     runs-on: ubuntu-latest
