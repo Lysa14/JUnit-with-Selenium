@@ -12,21 +12,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - uses: actions/checkout@v4
-    - name: Set up JDK 11
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'oracle'
-        java-version: '11'
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+            distribution: 'adopt' 
+            java-version: '11'
     
 
-    - name: Build with Maven
-      run: mvn -B clean package --file pom.xml
+      - name: Build with Maven
+        run: mvn -B clean package --file pom.xml
 
-    - name: Run Junit tests
-      run: mvn test 
+      - name: Run Junit tests
+        run: mvn test 
 
    selenium:
     runs-on: ubuntu-latest
@@ -36,7 +35,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-            distribution: 'oracle' 
+            distribution: 'adopt' 
             java-version: '11'
       - name: Run Junit tests
         run: mvn test  -Dtest=TestSelenium
