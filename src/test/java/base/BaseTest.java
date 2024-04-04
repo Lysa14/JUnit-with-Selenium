@@ -7,10 +7,12 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.WebDriver;
 
 import utils.ElementUtil;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class BaseTest {
 
 	private BasePage basePage;
