@@ -1,4 +1,4 @@
-name: Java Junit and Selenium
+name: Java Junit and Selenium Tests
 
 on:
   push:
