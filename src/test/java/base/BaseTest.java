@@ -29,7 +29,7 @@ public abstract class BaseTest {
 
 	@AfterEach
 	public void takesScreenshots() throws IOException {
-		ElementUtil.implicitlyWait(driver, 10, TimeUnit.SECONDS);
+		ElementUtil.implicitlyWait(driver, 100, TimeUnit.SECONDS);
 		ElementUtil.getScreenshot(driver);
 	}
 
