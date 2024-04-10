@@ -33,7 +33,10 @@ jobs:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
 
-
+      - name: Setup CodeQL environment
+        shell: bash
+        run: |
+          eval "$(codeql env)"
 
       - name: Analyze with CodeQL
         run: |
