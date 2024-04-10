@@ -37,7 +37,7 @@ jobs:
 
       - name: Analyze with CodeQL
         run: |
-           codeql database analyze ./ --format=sarif-latest --output=codeql-results.sarif
+           codeql database analyze ${{github.workspace}} --format=sarif-latest --output=codeql-results.sarif
     
    
       - name: Upload CodeQL results
