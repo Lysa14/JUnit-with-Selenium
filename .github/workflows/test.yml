@@ -67,15 +67,7 @@ jobs:
                     The build was ${{ needs.test.result }}.
                     ----------------------------------------------
                     Une nouvelle version de notre projet est disponible. Vous pouvez consulter la source du projet ici : https://github.com/${{ github.repository }}
-
+                  
                     ---------------------------------------------  
 
-  #  codacy-analysis-cli:
-  #       name: Codacy Analysis CLI
-  #       runs-on: ubuntu-latest
-  #       steps:
-  #         - name: Checkout code
-  #           uses: actions/checkout@main
-
-  #         - name: Run Codacy Analysis CLI
-  #           uses: codacy/codacy-analysis-cli-action@master
+                    

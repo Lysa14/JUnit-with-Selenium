@@ -1,0 +1,30 @@
+name: Java Junit and Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+
+            
+
+
+jobs:
+ 
+ test:
+  
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [java]
+        build-mode: [manual]
+            
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+  
+      # Initializes CodeQL tools and creates a codebase for analysis.
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+      
