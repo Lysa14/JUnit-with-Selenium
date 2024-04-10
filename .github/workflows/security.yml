@@ -32,4 +32,16 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
-      
+
+
+
+      - name: Analyze with CodeQL
+        run: |
+           codeql database analyze ./ --format=sarif-latest --output=codeql-results.sarif
+    
+   
+      - name: Upload CodeQL results
+        uses: actions/upload-artifact@v2
+        with:
+            name: codeql-results
+            path: codeql-results.sarif
